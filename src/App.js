@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+  import './App.css';
+  import { BrowserRouter, Routes, Route } from 'react-router-dom';
+  import Categories from './components/Categories';
+  import Home from './pages/Home';
+  import Italian from './components/cuisine/Italian';
+  import American from './components/cuisine/American';
+  import Thai from './components/cuisine/Thai';
+  import Japanese from './components/cuisine/Japanese';
+  import Searched from './pages/Searched';
+  import Recipe from './pages/Recipe';
+  
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  function App() {
+    return (
+      <div className="App">
+        <BrowserRouter>
+          <Categories/>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cuisine/Japanese" element={<Japanese />} />
+            <Route path="/cuisine/Italian" element={<Italian />} />
+            <Route path="/cuisine/American" element={<American />} />
+            <Route path="/cuisine/Thai" element={<Thai />} />
+            <Route path="/Searched/:search" element={<Searched/>}></Route>
+            <Route path="/Recipe/:name" element={<Recipe/>}></Route>
+            
 
-export default App;
+          </Routes>
+        </BrowserRouter>
+      </div>
+    );
+  }
+
+  export default App;

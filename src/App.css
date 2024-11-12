@@ -1,7 +1,12 @@
+/* Basic styling for the entire app */
 .App {
   text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9; /* Light background for a modern feel */
+  color: #333; /* Dark grey text for readability */
 }
 
+/* Logo styles */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,18 +19,25 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: calc(12px + 2vmin); /* Slightly larger font for modern look */
+  color: #333;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
 
 .App-link {
-  color: #61dafb;
+  color: #0066cc; /* Modern blue shade */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.App-link:hover {
+  color: #004a99;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +47,115 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Category wrapper for better spacing and layout */
+.categoryWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  gap: 2rem; /* Spacing between elements for a clean look */
+  flex-wrap: wrap;
+}
+
+/* Icons container styles for a flexible grid layout */
+.IconsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  margin-top: 2rem;
+  color: #333;
+}
+
+/* Styles for each nav link item */
+.itemStyle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 0.5rem;
+}
+
+/* Circle background for each icon with modern minimal styling */
+.icon {
+  font-size: 1.8rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: #efefef; /* Light grey for minimal background */
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.6rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15); /* Soft shadow for subtle 3D effect */
+}
+
+.itemStyle h3 {
+  font-size: 0.9rem;
+  color: #666; 
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.itemStyle:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.itemStyle:hover .icon {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .IconsContainer {
+    gap: 1rem;
+  }
+  .icon {
+    font-size: 1.6rem;
+    width: 3rem;
+    height: 3rem;
+  }
+  .itemStyle h3 {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .categoryWrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+  .IconsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .icon {
+    font-size: 1.4rem;
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+  .itemStyle h3 {
+    font-size: 0.8rem;
+  }
+}
+
+.recipeLogo {
+  font-weight: 500;
+  border: solid 1.5px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 0.7rem;
+  align-items: center;
+  color: #252525;
+  background-color: #f5f5f5;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
 }

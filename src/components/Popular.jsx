@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import React, { useEffect, useState } from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/splide.min.css';
+import { Link } from 'react-router-dom';
 
 function Popular() {
     const [Popular, setPopular] = useState([])
@@ -40,9 +41,11 @@ function Popular() {
                                 <div >
 
                                     <Card>
+                                        <Link to={'/recipe/'+recipe.id} >
                                         <img src={recipe.image} alt={recipe.title} />
                                         <Gradient />
                                         <p>{recipe.title}</p>
+                                        </Link>
                                     </Card>
 
                                 </div>
@@ -56,9 +59,9 @@ function Popular() {
     );
 }
 const Wrapper = styled.div`
-    margin:4rem 0rem;
     display:row;
     justify-content:center;
+    padding:1rem;
 `
 const Card = styled.div`
     border-radius:2rem;

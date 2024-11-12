@@ -1,33 +1,40 @@
 import styled from '@emotion/styled';
 import { GiNoodles, GiChopsticks } from "react-icons/gi"
 import { FaPizzaSlice, FaHamburger } from "react-icons/fa"
+import { NavLink } from 'react-router-dom'; import Search from './Search';
 
 
 function Categories() {
     return (
-        <div>
+        <div className='categoryWrapper'>
+            <NavLink to={'/'}>
+            <h1 className='recipeLogo'>Recipe Finder</h1>
+            </NavLink>
             <IconsContainer>
-            <IconEach>
-                <GiNoodles />
-                <h3>Noodles</h3>
-            </IconEach>
-            <IconEach>
-                <GiChopsticks />
-                <h3>Chaumin</h3>
+            <NavLink to={'/cuisine/Thai'}className="itemStyle">
+                <GiNoodles className="icon" />
+                <h3>Thai</h3>
+            </NavLink>
+            <NavLink to={'/cuisine/Japanese'}className="itemStyle">
+                <GiChopsticks className="icon" />
+                <h3>Japanese</h3>
 
-            </IconEach>
-            <IconEach>
-                <FaPizzaSlice />
-                <h3>Pizza</h3>
+            </NavLink>
+            <NavLink to={'cuisine/Italian'}className="itemStyle">
+                <FaPizzaSlice className="icon" />
+                <h3>Italian</h3>
 
-            </IconEach>
-            <IconEach>
-                <FaHamburger />
-                <h3>Burger</h3>
+            </NavLink>
+            <NavLink to={'/cuisine/American'} className="itemStyle">
+                <FaHamburger className="icon" />
+                <h3>American</h3>
 
-            </IconEach>
+            </NavLink>
+
+            
 
             </IconsContainer>
+            <Search/>
 
         </div>
     )
@@ -35,31 +42,14 @@ function Categories() {
 
 const IconsContainer = styled.div`
 
+
     display:flex;
     justify-content:center;
     padding:0.5rem;
     margin-top:2rem;
     align-items:center;
     gap:0.5rem;
-    background-color:#252525;
     border-radius:10px;
 `;
-
-const IconEach = styled.div`
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    border:solid 2px;
-    border-radius:8px;
-    padding:0.5rem;
-
-    &:hover{
-        cursor:pointer;
-        background-color:#121212;
-
-    }
-
-`
 
 export default Categories
